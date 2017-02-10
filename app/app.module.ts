@@ -18,8 +18,6 @@ import { GlobalState } from './global.state';
 import { NgaModule } from './theme/nga.module';
 import { PagesModule } from './pages/pages.module';
 
-import { AdminModule } from './admin/admin.module';
-
 import { AlertComponent } from 'app/login/directives/index';
 import { AuthGuard } from 'app/login/guards/index';
 import { AlertService, AuthenticationService, UserService } from 'app/login/services/index';
@@ -55,8 +53,7 @@ export type StoreType = {
         ReactiveFormsModule,
         NgaModule.forRoot(),
         PagesModule,
-        routing,
-        AdminModule
+        routing
     ],
     providers: [ // expose our Services and Providers into Angular's dependency injection
         ENV_PROVIDERS,
