@@ -1,34 +1,67 @@
-import {Component} from '@angular/core';
-import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
 
-import 'style-loader!./login.scss';
+import { AlertService, AuthenticationService } from '../login/services/index';
 
 @Component({
-  selector: 'login',
-  templateUrl: './login.html',
+    styleUrls: ['./login.scss'],
+    templateUrl: './login.html'
+
 })
-export class Login {
+export class LoginComponent implements OnInit {
+    model: any = {};
+    loading = false;
+    error = '';
 
-  public form:FormGroup;
-  public email:AbstractControl;
-  public password:AbstractControl;
-  public submitted:boolean = false;
+    public form: FormGroup;
+    public email: AbstractControl;
+    public password: AbstractControl;
+    public submitted: boolean = false;
 
-  constructor(fb:FormBuilder) {
-    this.form = fb.group({
-      'email': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
-      'password': ['', Validators.compose([Validators.required, Validators.minLength(4)])]
-    });
+    constructor(
+        private router: Router,
+        private authenticationService: AuthenticationService,
+        private alertService: AlertService,
+        private fb: FormBuilder
+    ) {
 
-    this.email = this.form.controls['email'];
-    this.password = this.form.controls['password'];
-  }
+        this.form = this.fb.group({
+            'email': ['kodeinside@kodeinside.com', Validators.compose([Validators.required, Validators.minLength(6)])],
+            'password': ['123321', Validators.compose([Validators.required, Validators.minLength(6)])]
+        });
 
-  public onSubmit(values:Object):void {
-    this.submitted = true;
-    if (this.form.valid) {
-      // your code goes here
-      // console.log(values);
+
+        this.email = this.form.controls['email'];
+        this.password = this.form.controls['password'];
+
     }
-  }
+
+    ngOnInit() {
+        // reset login status
+        this.authenticationService.logout();
+    }
+
+    login() {
+        this.loading = true;
+        this.authenticationService.login(this.model.username, this.model.password).then(
+            res => {
+                console.log(res);
+                this.router.navigate(['pages/dashboard']);
+            },
+            error => {
+                this.alertService.error(error);
+                this.loading = false;
+            }
+        );
+    }
+
+    public onSubmit(values: Object): void {
+        this.submitted = true;
+        if (this.form.valid) {
+            this.login();
+        }
+    }
 }
+
+
