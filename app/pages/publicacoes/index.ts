@@ -1,1 +1,1 @@
-export * from './charts.component';
+export * from './materia.component';
