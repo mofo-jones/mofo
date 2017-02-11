@@ -25,6 +25,18 @@ export const PAGES_MENU = [
             },
             {
                 path: 'materia',
+                data: { 
+                    menu: {
+                        title: 'New Page',
+                        icon: 'ion-android-home',
+                        selected: false,
+                        expanded: false,
+                        order: 0
+                    }
+                }
+            },
+            {
+                path: 'materia',
                 data: {
                     menu: {
                         title: 'Publicar Matéria',
