@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
         this.authenticationService.login(this.model.username, this.model.password).then(
             res => {
                 console.log(res);
-                this.router.navigate(['pages/dashboard']);
+                this.router.navigate(['pages/new']);
             },
             error => {
                 this.alertService.error(error);

@@ -3,8 +3,8 @@ import { CommonModule }  from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
 
-import { routing }       from './ola.routing';
-import { OlaComponent } from './ola.component';
+import { routing }       from './new.routing';
+import { NewComponent } from './new.component';
 
 
 @NgModule({
@@ -15,10 +15,10 @@ import { OlaComponent } from './ola.component';
     routing
   ],
   declarations: [
-    OlaComponent
+    NewComponent
   ],
   providers: [
 // services
     ]
 })
-export class OlaModule {}
+export class NewModule {}
