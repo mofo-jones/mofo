@@ -1,6 +1,53 @@
 export const PAGES_MENU = [
     {
         path: 'pages',
+        data: {
+            menu: {
+                title: 'Publicações',
+                icon: 'ion-android-home',
+                selected: false,
+                expanded: false,
+                order: 0
+            }
+        },
+        children: [
+            {
+                path: 'materia',
+                data: {
+                    menu: {
+                        title: 'Publicar Matéria',
+                        icon: 'ion-android-home',
+                        selected: false,
+                        expanded: false,
+                        order: 0
+                    }
+                }
+            },
+            {
+                path: 'artigo',
+                data: {
+                    menu: {
+                        title: 'Publicar Matéria',
+                        icon: 'ion-android-home',
+                        selected: false,
+                        expanded: false,
+                        order: 0
+                    }
+                }
+            }
+        ]
+    },
+    {
+        path: 'pages',
+        data: {
+            menu: {
+                title: 'Demos',
+                icon: 'ion-gear-a',
+                selected: false,
+                expanded: false,
+                order: 0
+            }
+        },
         children: [
             {
                 path: 'dashboard',
