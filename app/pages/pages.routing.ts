@@ -15,13 +15,15 @@ export const routes: Routes = [
         children: [
             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
             { path: 'dashboard', loadChildren: 'app/pages/@demos/dashboard/dashboard.module#DashboardModule' },
+            { path: 'new', loadChildren: 'app/pages/@new/new.module#NewModule' },
             { path: 'editors', loadChildren: 'app/pages/@demos/editors/editors.module#EditorsModule' },
             { path: 'components', loadChildren: 'app/pages/@demos/components/components.module#ComponentsModule' },
             { path: 'charts', loadChildren: 'app/pages/@demos/charts/charts.module#ChartsModule' },
             { path: 'ui', loadChildren: 'app/pages/@demos/ui/ui.module#UiModule' },
             { path: 'forms', loadChildren: 'app/pages/@demos/forms/forms.module#FormsModule' },
             { path: 'tables', loadChildren: 'app/pages/@demos/tables/tables.module#TablesModule' },
-            { path: 'maps', loadChildren: 'app/pages/@demos/maps/maps.module#MapsModule' }
+            { path: 'maps', loadChildren: 'app/pages/@demos/maps/maps.module#MapsModule' },
+            //            { path: 'new', loadChildren: 'app/pages/@new/new.module#NewModule' }
         ]
     }
 

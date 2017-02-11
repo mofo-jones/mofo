@@ -12,6 +12,18 @@ export const PAGES_MENU = [
         },
         children: [
             {
+                path: 'new',
+                data: { 
+                    menu: {
+                        title: 'New Page',
+                        icon: 'ion-android-home',
+                        selected: false,
+                        expanded: false,
+                        order: 0
+                    }
+                }
+            },
+            {
                 path: 'materia',
                 data: {
                     menu: {
