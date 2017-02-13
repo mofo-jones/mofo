@@ -7,13 +7,14 @@ import { routing } from './materia.routing';
 import { MateriaComponent } from './materia.component';
 
 import { MateriaService } from './materia.service';
-
+import { NgUploaderModule } from 'ngx-uploader';
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
         NgaModule,
+        NgUploaderModule,
         routing
     ],
     declarations: [

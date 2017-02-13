@@ -1,58 +1,73 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
     <input formControlName="id" type="hidden" id="id">
     <input formControlName="idPost" type="hidden" id="idPost" >
+
     <div class="row">
         <div>
             <ba-card title="Cadastro do Card" baCardClass="with-scroll">
                 <div class="row">
-                    <div class="col-sm-3">
-                        <div class="form-group">
-                            <label for="title">Title</label>
-                            <input formControlName="title" type="text" class="form-control" id="title" placeholder="Title...">
+                    <div class="col-sm-9">
+                        <div class="row"> 
+                            <div class="col-sm-5">
+                                <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <input formControlName="title" type="text" class="form-control" id="title" placeholder="Title...">
+                                </div>
+                            </div>
+                            <div class="col-sm-5 offset-md-1">
+                                <div class="form-group">
+                                    <label for="subtitle">Subtitle</label>
+                                    <input formControlName="subtitle" type="text" class="form-control" id="subtitle" placeholder="Subtitle...">
+                                </div>
+                            </div>
+                        </div>   
+                        <div class="row"> 
+                            <div class="col-sm-5">
+                                <div class="form-group">
+                                    <label for="text">Text</label>
+                                    <input formControlName="text" type="text" class="form-control" id="text" placeholder="Text...">
+                                </div>
+                            </div>
+                            <div class="col-sm-5 offset-md-1">
+                                <div class="form-group">
+                                    <label for="linktitle">Link Title</label>
+                                    <input formControlName="linktitle" type="text" class="form-control" id="linktitle" placeholder="Link Title...">
+                                </div>
+                            </div>
                         </div>
+                        <div class="row"> 
+                            <div class="col-sm-5">
+                                <div class="form-group">
+                                    <label for="link">Link</label>
+                                    <input formControlName="link" type="text" class="form-control" id="link" placeholder="Link...">
+                                </div>
+                            </div>
+                            <div class="col-sm-5 offset-md-1">
+                                <div class="form-group">
+                                    <label for="info">Info</label>
+                                    <input formControlName="info" type="text" class="form-control" id="info" placeholder="Info...">
+                                </div>
+                            </div>
+                        </div>   
                     </div>
                     <div class="col-sm-3">
-                        <div class="form-group">
-                            <label for="subtitle">Subtitle</label>
-                            <input formControlName="subtitle" type="text" class="form-control" id="subtitle" placeholder="Subtitle...">
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="form-group">
-                            <label for="text">Text</label>
-                            <input formControlName="text" type="text" class="form-control" id="text" placeholder="Text...">
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="form-group">
-                            <label for="linktitle">Link Title</label>
-                            <input formControlName="linktitle" type="text" class="form-control" id="linktitle" placeholder="Link Title...">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="form-group">
-                            <label for="link">Link</label>
-                            <input formControlName="link" type="text" class="form-control" id="link" placeholder="Link...">
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="form-group">
-                            <label for="info">Info</label>
-                            <input formControlName="info" type="text" class="form-control" id="info" placeholder="Info...">
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="form-group">
-                            <label for="images">Images</label>
-                            <input formControlName="images" type="text" class="form-control" id="images" placeholder="Images...">
-                        </div>
+                        
+                        <ba-card title="Picture Uploader" baCardClass="with-scroll" style="text-align: -webkit-center; text-align: -moz-center;">
+                            <ba-picture-uploader 
+                                [picture]="profile.picture" 
+                                [defaultPicture]="defaultPicture" 
+                                [uploaderOptions]="uploaderOptions"
+                                (onUploadCompleted)="onUploadCompleted($event)">
+                            </ba-picture-uploader>
+                            <!--                                  @Output() onUpload = new EventEmitter<any>();
+                              @Output() onUploadCompleted = new EventEmitter<any>();-->
+                        </ba-card>
                     </div>
                 </div>
             </ba-card>
         </div>
     </div>
+
     <div class="row">
         <ba-card title="Cadastro do Card" baCardClass="with-scroll">
             <div class="row">
