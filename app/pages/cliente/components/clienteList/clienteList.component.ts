@@ -44,7 +44,9 @@ export class ClienteList {
                 title: 'Endereço', filter: false
             },
             email: {
-                title: 'E-Mail', filter: false
+                title: 'E-Mail', filter: false,
+                type:'html',
+                class:'text-center'
             }
         },
         actions: { columnTitle: 'Ações', delete: true, edit: true, add: false }

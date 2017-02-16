@@ -13,35 +13,10 @@ export const PAGES_MENU = [
         children: [
             {
                 path: 'new',
-                data: { 
+                data: {
                     menu: {
                         title: 'New Page',
-                        icon: 'ion-android-home',
-                        selected: false,
-                        expanded: false,
-                        order: 0
-                    }
-                }
-            },
-            {
-                path: 'cliente',
-                data: { 
-                    path: 'clienteList',
-                    menu: {
-                        title: 'Cliente List',
-                        icon: 'ion-android-home',
-                        selected: false,
-                        expanded: false,
-                        order: 0
-                    }
-                }
-            },
-            {
-                path: 'materia',
-                data: { 
-                    menu: {
-                        title: 'Materia',
-                        icon: 'ion-android-home',
+                        //                        icon: 'ion-android-home',
                         selected: false,
                         expanded: false,
                         order: 0
@@ -53,7 +28,50 @@ export const PAGES_MENU = [
                 data: {
                     menu: {
                         title: 'Artigo',
-                        icon: 'ion-android-home',
+                        //                        icon: 'ion-ios-more',
+                        selected: false,
+                        expanded: false,
+                        order: 700,
+                    }
+                },
+                children: [
+                    {
+                        path: 'artigo-list',
+                        data: {
+                            menu: {
+                                title: 'Listar'
+                            }
+                        }
+                    },
+                    {
+                        path: 'artigo-form',
+                        data: {
+                            menu: {
+                                title: 'Cadastrar'
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                path: 'cliente',
+                data: {
+                    path: 'clienteList',
+                    menu: {
+                        title: 'Cliente List',
+                        //                        icon: 'ion-android-home',
+                        selected: false,
+                        expanded: false,
+                        order: 0
+                    }
+                }
+            },
+            {
+                path: 'materia',
+                data: {
+                    menu: {
+                        title: 'Materia',
+                        //                        icon: 'ion-android-home',
                         selected: false,
                         expanded: false,
                         order: 0
@@ -67,7 +85,7 @@ export const PAGES_MENU = [
         data: {
             menu: {
                 title: 'Demos',
-                icon: 'ion-gear-a',
+                //                icon: 'ion-gear-a',
                 selected: false,
                 expanded: false,
                 order: 0
@@ -79,7 +97,7 @@ export const PAGES_MENU = [
                 data: {
                     menu: {
                         title: 'Dashboard',
-                        icon: 'ion-android-home',
+                        //                        icon: 'ion-android-home',
                         selected: false,
                         expanded: false,
                         order: 0
@@ -91,7 +109,7 @@ export const PAGES_MENU = [
                 data: {
                     menu: {
                         title: 'Editors',
-                        icon: 'ion-edit',
+                        //                        icon: 'ion-edit',
                         selected: false,
                         expanded: false,
                         order: 100,
@@ -113,7 +131,7 @@ export const PAGES_MENU = [
                 data: {
                     menu: {
                         title: 'Components',
-                        icon: 'ion-gear-a',
+                        //                        icon: 'ion-gear-a',
                         selected: false,
                         expanded: false,
                         order: 250,
@@ -135,7 +153,7 @@ export const PAGES_MENU = [
                 data: {
                     menu: {
                         title: 'Charts',
-                        icon: 'ion-stats-bars',
+                        //                        icon: 'ion-stats-bars',
                         selected: false,
                         expanded: false,
                         order: 200,
@@ -157,7 +175,7 @@ export const PAGES_MENU = [
                 data: {
                     menu: {
                         title: 'UI Features',
-                        icon: 'ion-android-laptop',
+                        //                        icon: 'ion-android-laptop',
                         selected: false,
                         expanded: false,
                         order: 300,
@@ -211,7 +229,7 @@ export const PAGES_MENU = [
                 data: {
                     menu: {
                         title: 'Form Elements',
-                        icon: 'ion-compose',
+                        //                        icon: 'ion-compose',
                         selected: false,
                         expanded: false,
                         order: 400,
@@ -241,7 +259,7 @@ export const PAGES_MENU = [
                 data: {
                     menu: {
                         title: 'Tables',
-                        icon: 'ion-grid',
+                        //                        icon: 'ion-grid',
                         selected: false,
                         expanded: false,
                         order: 500,
@@ -271,7 +289,7 @@ export const PAGES_MENU = [
                 data: {
                     menu: {
                         title: 'Maps',
-                        icon: 'ion-ios-location-outline',
+                        //                        icon: 'ion-ios-location-outline',
                         selected: false,
                         expanded: false,
                         order: 600,
@@ -317,7 +335,7 @@ export const PAGES_MENU = [
                 data: {
                     menu: {
                         title: 'Pages',
-                        icon: 'ion-document',
+                        //                        icon: 'ion-document',
                         selected: false,
                         expanded: false,
                         order: 650,
@@ -347,7 +365,7 @@ export const PAGES_MENU = [
                 data: {
                     menu: {
                         title: 'Menu Level 1',
-                        icon: 'ion-ios-more',
+                        //                        icon: 'ion-ios-more',
                         selected: false,
                         expanded: false,
                         order: 700,
@@ -391,7 +409,7 @@ export const PAGES_MENU = [
                     menu: {
                         title: 'External Link',
                         url: 'http://akveo.com',
-                        icon: 'ion-android-exit',
+                        //                        icon: 'ion-android-exit',
                         order: 800,
                         target: '_blank'
                     }

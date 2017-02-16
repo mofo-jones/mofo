@@ -4,14 +4,15 @@ import { Observable } from 'rxjs/Rx';
 import { Headers, RequestOptions } from '@angular/http';
 
 // Variáveis globais do sistema
-import globalVars = require('../../globalVars');
+import globalVars = require('../../../globalVars');
 
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class MateriaService {
+export class ArtigoFormService {
 
     private cardSaveUrl = globalVars.host + 'card/card/save';
+    private cardGetUrl = globalVars.host + 'card/card/get';
     private headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
     private options: RequestOptions;
 
@@ -31,10 +32,10 @@ export class MateriaService {
             .catch(res => this.handleError(res));
     }
 
-    //    public get(id: any) {
-    //        let post = 'data=' + JSON.stringify({ 'id': id });
-    //        return this.http.post(this.clienteGetUrl, post, this.options).toPromise().then(res => res.json());
-    //    }
+        public get(id: any) {
+            let post = 'data=' + JSON.stringify({ 'id': id });
+            return this.http.post(this.cardGetUrl, post, this.options).toPromise().then(res => res.json().data);
+        }
 
     //    public delete(id: any) {
     //        console.log('chamada para deletar o ID:', id);

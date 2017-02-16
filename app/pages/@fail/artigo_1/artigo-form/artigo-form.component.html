@@ -1,7 +1,26 @@
+<div class="row">
+    <ba-card baCardClass="with-scroll">
+        <div class="row" >
+            <div class="col-sm-12">
+                <button type="button" (click)="onList()" class="btn btn-default btn-with-icon notHover" >
+                    <i class="fa fa-list-alt"></i>Lista
+                </button>
+                <button [disabled]="!form.valid" type="submit" (click)="saveNew(form.value)" class="btn btn-default btn-with-icon notHover" >
+                    <i class="fa fa-save"></i>Salvar e Novo
+                </button>
+                <button [disabled]="!form.valid" type="submit" (click)="saveList(form.value)"  class="btn btn-default btn-with-icon notHover" >
+                    <i class="fa fa-save"></i>Salva e Lista
+                </button>
+                <button type="button"  (click)="onReset()"  class="btn btn-default btn-with-icon notHover" >
+                    <i class="fa fa-eraser"></i>Limpar
+                </button>
+            </div>
+        </div>
+    </ba-card>
+</div>
 <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
     <input formControlName="id" type="hidden" id="id">
     <input formControlName="idPost" type="hidden" id="idPost" >
-
     <div class="row">
         <div>
             <ba-card title="Cadastro do Card" baCardClass="with-scroll">
@@ -50,8 +69,8 @@
                             </div>
                         </div>   
                     </div>
-                    <div class="col-sm-3">
-                        
+                    <div class=" col-sm-3">
+
                         <ba-card title="Picture Uploader" baCardClass="with-scroll" style="text-align: -webkit-center; text-align: -moz-center;">
                             <ba-picture-uploader 
                                 [picture]="profile.picture" 
@@ -67,7 +86,6 @@
             </ba-card>
         </div>
     </div>
-
     <div class="row">
         <ba-card title="Cadastro do Card" baCardClass="with-scroll">
             <div class="row">
@@ -102,7 +120,7 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <!--<button type="submit" class="btn btn-primary">Submit</button>-->
         </ba-card>
     </div>
 </form>

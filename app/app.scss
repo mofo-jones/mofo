@@ -1,2 +1,6 @@
 @import "~normalize.css";
 @import "theme/theme";
+
+div > img{
+    text-align: -webkit-center !important;
+}
